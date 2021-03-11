@@ -18,7 +18,18 @@
         <br/>
         <div class="row">
             <div class="col-md-8"><h2><div id="Puntaje">Puntos: 0</div></h2></div> 
-            
+            <a href="final.html" onclick="alert('Terminando el juego')">Terminar</a>
+            <audio id="xyz" src="audios/incorrecto.mp3" preload="auto"></audio>
+            <audio id="oso" src="audios/oso.mp3" preload="auto"></audio>
+            <audio id="delfin" src="audios/delfin.mp3" preload="auto"></audio>
+            <audio  id="elefante" src="audios/elefante.mp3" preload="auto"></audio>
+            <audio id="leon" src="audios/leon.mp3" preload="auto"></audio>
+            <audio id="mapache" src="audios/mapache.mp3" preload="auto"></audio>
+            <audio id="mono" src="audios/mono.mp3" preload="auto"></audio>
+            <audio id="murcielago" src="audios/murcielagos.mp3" preload="auto"></audio>
+            <audio id="pinguino" src="audios/pinguino.mp3" preload="auto"></audio>
+            <audio id="rinoceronte" src="audios/rinoceronte.mp3" preload="auto"></audio>
+            <audio id="tortuga" src="audios/tortuga.mp3" preload="auto"></audio>
         </div>
         
         <div class="row">
@@ -78,12 +89,44 @@ function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     if(data==item){
-    ev.target.appendChild(document.getElementById(data));      
+    ev.target.appendChild(document.getElementById(data)); 
+    if(data == 'Oso'){
+        document.getElementById('oso').play(); 
+    }
+    if(data == 'Delfin'){
+        document.getElementById('delfin').play(); 
+    }
+    if(data == 'Elefante'){
+        document.getElementById('elefante').play(); 
+    }
+    if(data == 'Leon'){
+        document.getElementById('leon').play(); 
+    }
+    if(data == 'Mapache'){
+        document.getElementById('mapache').play(); 
+    }
+    if(data == 'Mono'){
+        document.getElementById('mono').play(); 
+    }
+    if(data == 'Murcielago'){
+        document.getElementById('murcielago').play(); 
+    }   
+    if(data == 'Pinguino'){
+        document.getElementById('pinguino').play(); 
+    }
+    if(data == 'Rinoceronte'){
+        document.getElementById('rinoceronte').play(); 
+    }
+    if(data == 'Tortuga'){
+        document.getElementById('tortuga').play(); 
+    }
             Puntos++;
             $("#Puntaje").html('<span class="label label-default">Puntos: '+Puntos+'</span>');
            tiempo=setInterval(function(){ IniciarJuego(); }, 800);
     }else{
-        alert("Fallaste"); Puntos=0;
+        document.getElementById('xyz').play();
+        alert("Alerta"); 
+        Puntos=0;
         $("#Puntaje").html('Puntos:'+Puntos+'');
         tiempo=setInterval(function(){ IniciarJuego(); }, 800);
     }

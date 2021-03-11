@@ -1,5 +1,5 @@
 body{
-    background: #303030;
+    background-image: url(/img/fondo.jpg);
   }
   h1 {
     color: #CA7218;
@@ -52,3 +52,4 @@ body{
   #arrastrable3 {
       background: #822;
       border: 2px solid #282;
+  }
