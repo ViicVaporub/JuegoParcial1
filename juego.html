@@ -17,26 +17,17 @@
 	<div class="container text-center">
         <br/>
         <div class="row">
-           <div class="col-md-3"><img src="Poke.png"/></div> 
-            <div class="col-md-6"><h2><div id="Puntaje">Puntos:0</div></h2></div> 
+            <div class="col-md-8"><h2><div id="Puntaje">Puntos: 0</div></h2></div> 
             
         </div>
         
         <div class="row">
-            <div class="col-md-4"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <div class="col-md-4">
 <!-- lateral -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:300px;height:250px"
-     data-ad-client="ca-pub-4331617637495482"
-     data-ad-slot="7438564459"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></div>
-            <div class="col-md-4" id="DragPokemons" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="col-md-4"></div>
-        </div>
-        
-        <div class="row text-center" id="pokemons"></div>
+
+            <div id="DragPokemons" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="col-md-4"></div></div>
+        	<div class="row text-center" id="pokemons"></div>
         
     </div>
     <script>
@@ -73,7 +64,7 @@
             $("#pokemons").append('<div class="col-xs-4 col-md-4" ><a href="#" class="thumbnail"><img src="img/'+val+'.png" id='+val+' draggable="true" ondragstart="drag(event)" style="cursor:move; height: 40vh; width:20vw;" /></a></div>');
                
         });
-        $("#DragPokemons").append('<a href="#" class="thumbnail"   ></a><h3><span class="label label-danger">'+item+"</span></h3><br/>");
+        $("#DragPokemons").append('<a href="#" class="thumbnail"></a><h3><span class="label label-danger">'+item+"</span></h3><br/><img src='img/cueva.jpg'>");
          
         }
 function allowDrop(ev){
