@@ -57,3 +57,21 @@ body{
 .animal{
 padding-left: 40px;;
 }
+
+.drop{
+    padding-left: 9rem;
+    text-align: center;
+}
+#letra{
+    margin-left: 20rem;
+    font-size: 30px;
+}
+.encabezado{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+#salir{
+    margin-left: 55rem;
+}
