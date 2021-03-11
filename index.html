@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="codio.js">
     <title>Document</title>
 </head>
 <body>
@@ -14,7 +15,31 @@
           Jugar
         </span>
         &mdash; <a href="juego.html">Jugar</a></button>&mdash;
+        <div class="ejemplo">
+            <label for="nombre"> Nombre: </label>
+            <input type="text" id="nombre" />
+            
+            <label for="nombre"> Password: </label>
+            <input type="text" id="password" />
+            
+            <input type="button" onclick="guardarDatos()" value="Guardar datos" />
+            
+          </div>
       </p>
- 
+ <script>
+     function guardarDatos(){
+    localStorage.nombre = document.getElementById("nombre").value;
+    localStorage.password = document.getElementById("password").value;
+   }
+   
+   function recuperarDatos(){
+    if ((localStorage.nombre != undefined) && (localStorage.password != undefined)) {
+     document.getElementById("datos").innerHTML = "Nombre: " + localStorage.nombre + "<br/> Password: " + localStorage.password;
+    }
+    else{
+     document.getElementById("datos").innerHTML = "No has introducido tu nombre y tu password";
+    }
+   }
+ </script>
 </body>
 </html>
