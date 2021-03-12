@@ -51,9 +51,10 @@ p span {
 
 .ejemplo {
   margin: auto;
-  width: 40%;
+  width: 750px;
  }
  .ejemplo input {
 margin: 5px 0 10px 300px;
   display: block;
  }
+
