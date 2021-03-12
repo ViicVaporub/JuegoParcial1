@@ -14,11 +14,20 @@
 
 </head>
 <body>
+    <header> 
+
+
+          </nav>
+          <!-- As a heading -->
+          <nav class="navbar navbar-dark bg-dark">
+            <span class="navbar-brand mb-0 h1"  id="Puntaje"> Puntos: 0</span>
+            <a href="final.html" onclick="alert('Terminando el juego')"><span class="badge badge-danger" id="salir">X</span></a></header>
+          </nav>
+       
 	<div class="container text-center">
         <br/>
         <div class="row">
-            <div><h2><div class="encabezado" id="Puntaje">Puntos: 0</div></h2></div> 
-            <a href="final.html" onclick="alert('Terminando el juego')"><span class="badge badge-danger" id="salir">X</span></a>
+           
            
             <audio id="xyz" src="audios/incorrecto.mp3" preload="auto"></audio>
             <audio id="oso" src="audios/oso.mp3" preload="auto"></audio>
@@ -40,7 +49,6 @@
             <div id="Dropzone" class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             </div>
         	<div class="row text-center" id="Animales"></div>
-        
     </div>
     <script>
         
