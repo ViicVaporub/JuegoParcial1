@@ -4,31 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="codio.js">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/login.css">
     <title>Document</title>
 </head>
 <body>
-    <p>
-        Titulo
-        <span>
-          Jugar
-        </span>
-        &mdash; <a href="juego.html">Jugar</a></button>&mdash;
-        <div class="ejemplo">
-            <label for="nombre"> Nombre: </label>
-            <input type="text" id="nombre" />
-            
-            <label for="nombre"> Password: </label>
-            <input type="text" id="password" />
-            
-            <input type="button" onclick="guardarDatos()" value="Guardar datos" />
-          </div>
-      </p>
+  
+  <div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<img src="img/logo.jpg" class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" id="nombre" name="" class="form-control input_user" value="" placeholder="username" required>
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="" class="form-control input_pass" value="" id="password" placeholder="password" required>
+						</div>
+						<div class="form-group">
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" class="custom-control-input" id="customControlInline">
+							</div>
+						</div>
+							<div class="d-flex justify-content-center mt-3 login_container">
+				 	<button type="button" onclick="guardarDatos()" value="Guardar datos" class="btn login_btn">Jugar</button>
+				   </div>
+					</form>
+				</div>
+		
+				<div class="mt-4">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
  <script>
      function guardarDatos(){
+      
     localStorage.nombre = document.getElementById("nombre").value;
     localStorage.password = document.getElementById("password").value;
+    window.location.href = "juego.html";
+
    }
    
    function recuperarDatos(){
