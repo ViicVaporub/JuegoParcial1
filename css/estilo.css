@@ -1,5 +1,5 @@
 body{
-    background-image: url(/img/fondo.jpg);
+    background-image: url(/img/fondo1.jpg);
   }
 
 .animal{
@@ -7,8 +7,15 @@ padding-left: 40px;;
 }
 
 .drop{
-    padding-left: 9rem;
+    margin-left: 9rem;
     text-align: center;
+
+}
+.drop img{
+    border: silver 8px solid;
+    border-image-source: url("/img/marco.png");
+    border-image-slice: 30;
+    text-align: justify;
 }
 #letra{
     margin-left: 20rem;
@@ -24,6 +31,4 @@ padding-left: 40px;;
     margin-left: 55rem;
 }
 
-canvas{
-          border:solid;
-     }
+
