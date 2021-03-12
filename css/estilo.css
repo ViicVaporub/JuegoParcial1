@@ -2,6 +2,15 @@ body{
     background-image: url(/img/fondo.jpg);
   }
 
+  .login_btn {
+    color: white !important;
+}
+.login_btn {
+    
+    background: white !important;
+    color:black !important;
+}
+
 .animal{
 padding-left: 40px;;
 }

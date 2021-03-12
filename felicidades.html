@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="css/estilo.css">
     <title>Document</title>
 </head>
-<body>
+<body style=" background-image: url(/img/fondo1.jpg);
+;">
     <nav class="navbar navbar-dark bg-dark">
         <span class="navbar-brand mb-0 h1">ANIMON</span>
     </nav>
@@ -26,14 +27,16 @@
         <p class="lead text-center">LOGRASTE JUNTAR 10 PUNTOS CONSECUTIVOS
             
         </p>
-        <p class="lead text-right">
-        <a class="btn btn-primary btn-lg" href="index.html" role="button">Volver a jugar</a>
-        </p>
+        <p class="lead text-center">
+        <a class="btn login_btn" href="index.html" role="button">Volver a jugar</a>
+        <canvas id="lienzo"></canvas>
+        <br><div id="botones"> 
+        <input type="button" class="btn login_btn1" id="comenzar" value="Comenzar" onClick="comenzar()">
+        <input type="button" class="btn login_btn1" id="detener" value="Detener" onClick="detener()">
+    </p>
     </div>
-    <canvas id="lienzo"></canvas>
-    <br><div id="botones"> 
-    <input type="button" id="comenzar" value="Comenzar" onClick="comenzar()">
-    <input type="button" id="detener" value="Detener" onClick="detener()">
+    
+
 </div>
 </body>
 </html>
