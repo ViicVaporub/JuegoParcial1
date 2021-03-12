@@ -30,5 +30,26 @@ padding-left: 40px;;
 #salir{
     margin-left: 55rem;
 }
+#lienzo{
+    height: 45vh;
+    width: 65vw;
+    margin-left: 24rem;
+}
+#botones{
+    margin-left: 40rem;
+}
+.jumbotron {
+    background:none ;
+}
 
+.jumbotron p{
+    font-weight: bold;
+
+}
+
+.jumbotron h1{
+    font-weight: bold;
+    -webkit-text-fill-color: aliceblue;
+
+}
 

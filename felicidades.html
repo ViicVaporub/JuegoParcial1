@@ -4,17 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="js/canvas.js"></script>
     <link rel="stylesheet" href="css/estilo.css">
     <title>Document</title>
 </head>
 <body>
-<p>GRACIAS POR JUGAR CON NOSOTROS</p>
-<canvas id="lienzo">
-
-</canvas>
-<input type="button" id="comenzar" value="Comenzar" onClick="comenzar()">
-<input type="button" id="detener" value="Detener" onClick="detener()">
-<a href="index.html">VOLVER</a>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">ANIMON</span>
+    </nav>
+   
+    <a href="index.html"></a>
+    <div class="jumbotron">
+        <h1 class="display-3 text-right">FELICIDADES HAZ TERMINADO</h1>
+        <hr>
+        <p class="lead text-center">LOGRASTE JUNTAR 10 PUNTOS CONSECUTIVOS</p>
+        <p class="lead text-right">
+        <a class="btn btn-primary btn-lg" href="index.html" role="button">Volver a jugar</a>
+        </p>
+    </div>
+    <canvas id="lienzo"></canvas>
+    <br><div id="botones"> 
+    <input type="button" id="comenzar" value="Comenzar" onClick="comenzar()">
+    <input type="button" id="detener" value="Detener" onClick="detener()">
+</div>
 </body>
 </html>
