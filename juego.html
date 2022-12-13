@@ -1,153 +1,88 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="js/eventos.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilo.css">
-	<style>.thumbnail{ height: 185px;}
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="js/eventos.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/estilo.css">
+  <style>
+    .thumbnail {
+      height: 185px;
+    }
+  </style>
 
 </head>
+
 <body>
-    <header> 
+  </nav>
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1" id="Puntaje"> Puntos: 0</span>
+    <a href="final.html" onclick="alert('Terminando el juego')"><span class="badge badge-danger" id="salir">X</span></a>
+    </header>
+  </nav>
 
-
-          </nav>
-          <!-- As a heading -->
-          <nav class="navbar navbar-dark bg-dark">
-            <span class="navbar-brand mb-0 h1"  id="Puntaje"> Puntos: 0</span>
-            <a href="final.html" onclick="alert('Terminando el juego')"><span class="badge badge-danger" id="salir">X</span></a></header>
-          </nav>
-       
-	<div class="container text-center">
-        <br/>
-        <div class="row">
-           
-           
-            <audio id="xyz" src="audios/incorrecto.mp3" preload="auto"></audio>
-            <audio id="oso" src="audios/oso.mp3" preload="auto"></audio>
-            <audio id="delfin" src="audios/delfin.mp3" preload="auto"></audio>
-            <audio  id="elefante" src="audios/elefante.mp3" preload="auto"></audio>
-            <audio id="leon" src="audios/leon.mp3" preload="auto"></audio>
-            <audio id="mapache" src="audios/mapache.mp3" preload="auto"></audio>
-            <audio id="mono" src="audios/mono.mp3" preload="auto"></audio>
-            <audio id="murcielago" src="audios/murcielagos.mp3" preload="auto"></audio>
-            <audio id="pinguino" src="audios/pinguino.mp3" preload="auto"></audio>
-            <audio id="rinoceronte" src="audios/rinoceronte.mp3" preload="auto"></audio>
-            <audio id="tortuga" src="audios/tortuga.mp3" preload="auto"></audio>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-6">
-
-
-            <div id="Dropzone" class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            </div>
-        	<div class="row text-center" id="Animales"></div>
+  <div class="container text-center">
+    <br />
+    <div>
+      <audio id="xyz" src="audios/incorrecto.mp3" preload="auto"></audio>
+      <audio id="oso" src="audios/oso.mp3" preload="auto"></audio>
+      <audio id="delfin" src="audios/delfin.mp3" preload="auto"></audio>
+      <audio id="elefante" src="audios/elefante.mp3" preload="auto"></audio>
+      <audio id="leon" src="audios/leon.mp3" preload="auto"></audio>
+      <audio id="mapache" src="audios/mapache.mp3" preload="auto"></audio>
+      <audio id="mono" src="audios/mono.mp3" preload="auto"></audio>
+      <audio id="murcielago" src="audios/murcielagos.mp3" preload="auto"></audio>
+      <audio id="pinguino" src="audios/pinguino.mp3" preload="auto"></audio>
+      <audio id="rinoceronte" src="audios/rinoceronte.mp3" preload="auto"></audio>
+      <audio id="tortuga" src="audios/tortuga.mp3" preload="auto"></audio>
     </div>
-    <script>
-        
-	var Animales = ["Delfin","Elefante","Leon","Mapache","Mono","Murcielago","Oso","Pinguino","Rinoceronte","Tortuga"];
-        
-        
-        
-    var Juego = [],indice,item,tiempo,Puntos=0;
-    $(document).ready(function(){ IniciarJuego();});
-        
-        function IniciarJuego(){
-			Animales = ["Delfin","Elefante","Leon","Mapache","Mono","Murcielago","Oso","Pinguino","Rinoceronte","Tortuga"];
-            Juego = [];
-            indice=0;
-            item=0;
-           
-        for(i=0;i<3;i++){
-            indice=Math.floor(Math.random()*Animales.length);
-            item = Animales[indice];
-            Juego.push(item);
-            Animales.splice(indice,1);
-        }
-        indice=Math.floor(Math.random()*Juego.length);
-        item = Juego[indice];
-            
-           $("#Animales").empty();
-           $("#Dropzone").empty();
-            
-           clearInterval(tiempo);
-            
-           $.each(Juego, function( i, val ) {
-               
-            $("#Animales").append('<div class="animal"><a href="#"><img src="img/'+val+'.png" id='+val+' draggable="true" ondragstart="drag(event)" style="cursor:move; height: 40vh; width:20vw;" /></a></div>');
-               
-        });
-        $("#Dropzone").append('<img src="img/'+item+'.jpg" style="heigth: 800px; width= 400px;"><h3><br><span id="letra" class="badge badge-danger">'+item+"</span></h3><br/>");
-        }
-function allowDrop(ev){
-	 ev.preventDefault();
-	}
 
-function drag(ev) {
-	ev.dataTransfer.setData("text", ev.target.id);
-	}
+    <main class="container">
 
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    if(data==item){
-    ev.target.appendChild(document.getElementById(data)); 
-    if(data == 'Oso'){
-        document.getElementById('oso').play(); 
-    }
-    if(data == 'Delfin'){
-        document.getElementById('delfin').play(); 
-    }
-    if(data == 'Elefante'){
-        document.getElementById('elefante').play(); 
-    }
-    if(data == 'Leon'){
-        document.getElementById('leon').play(); 
-    }
-    if(data == 'Mapache'){
-        document.getElementById('mapache').play(); 
-    }
-    if(data == 'Mono'){
-        document.getElementById('mono').play(); 
-    }
-    if(data == 'Murcielago'){
-        document.getElementById('murcielago').play(); 
-    }   
-    if(data == 'Pinguino'){
-        document.getElementById('pinguino').play(); 
-    }
-    if(data == 'Rinoceronte'){
-        document.getElementById('rinoceronte').play(); 
-    }
-    if(data == 'Tortuga'){
-        document.getElementById('tortuga').play(); 
-    }
-            Puntos++;
-            $("#Puntaje").html('<span class="label label-default">Puntos: '+Puntos+'</span>');
-            win();
-           tiempo=setInterval(function(){ IniciarJuego(); }, 800);
-    }else{
-        document.getElementById('xyz').play();
-        alert("Fallaste, intentalo de nuevo!"); 
-        Puntos=0;
-        $("#Puntaje").html('Puntos:'+Puntos+'');
-        tiempo=setInterval(function(){ IniciarJuego(); }, 800);
-    }
-}
-function win(){
-    if(Puntos == 10){
-        alert("Felicidades haz ganado");
-        window.location.href = "felicidades.html";
-    }
-}
+      <div class="row">
+        <div class=" col-sm-4  ">
+          <ul class="draggable-list">
+            <li id="e1" draggable="true"></li>
+          </ul>
+        </div>
+        <div class=" col-sm-4  ">
+          <ul class="draggable-list">
+            <li id="e2" draggable="true"></li>
+          </ul>
+        </div>
+        <div class=" col-sm-4  ">
+          <ul class="draggable-list">
+            <li id="e3" draggable="true"></li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class=" col-sm-4  ">
+            <ul class="draggable-list">
+              <li id="s1" draggable="true"></li>
+            </ul>
+          </div>
+          <div class=" col-sm-4  ">
+            <ul class="draggable-list">
+              <li id="s2" draggable="true"></li>
+            </ul>
+          </div>
+          <div class=" col-sm-4  ">
+            <ul class="draggable-list">
+              <li id="s3" draggable="true"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-</script>
+  </main>
+  <script src="js/script.js"></script>
 </body>
+
 </html>

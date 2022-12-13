@@ -8,16 +8,21 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/login.css">
-    <title>Document</title>
+	<script src="js/canvas.js"></script>
+    <title>Camino a casa</title>
 </head>
+<h1 style="color: darkblue; text-align: center;">Camino a casa</h3>
+<canvas id="lienzo" style="margin-left: 600px;"></canvas>
+<br><div id="botones"> 
+	<input type="button" class="btn login_btn1" id="comenzar" value="Comenzar" onClick="comenzar()" style="margin-left: 600px;">
+	<input type="button" class="btn login_btn1" id="detener" value="Detener" onClick="detener()" style="margin-left: 600px;">
 <body>
-  
   <div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
 					<div class="brand_logo_container">
-						<img src="img/logo.jpg" class="brand_logo" alt="Logo">
+						<img src="img/logo.png" class="brand_logo" alt="Logo">
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
@@ -26,13 +31,7 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" id="nombre" name="" class="form-control input_user" value="" placeholder="username" required>
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-							<input type="password" name="" class="form-control input_pass" value="" id="password" placeholder="password" required>
+							<input type="text" id="nombre" name="" class="form-control input_user" value="" placeholder="Nombre" required>
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
@@ -40,7 +39,10 @@
 							</div>
 						</div>
 							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="button" onclick="guardarDatos()" value="Guardar datos" class="btn login_btn">Jugar</button>
+				 	<button type="button" onclick="guardarDatos()" value="Guardar datos" class="btn login_btn">Iniciar</button>
+					 <a class="btn login_btn" href="Creditos.html" role="button">Creditos</a>
+					 
+
 				   </div>
 					</form>
 				</div>
@@ -56,17 +58,16 @@
      function guardarDatos(){
       
     localStorage.nombre = document.getElementById("nombre").value;
-    localStorage.password = document.getElementById("password").value;
     window.location.href = "juego.html";
 
    }
    
    function recuperarDatos(){
-    if ((localStorage.nombre != undefined) && (localStorage.password != undefined)) {
-     document.getElementById("datos").innerHTML = "Nombre: " + localStorage.nombre + "<br/> Password: " + localStorage.password;
+    if (localStorage.nombre != undefined) {
+     document.getElementById("datos").innerHTML = "Nombre: " + localStorage.nombre ;
     }
     else{
-     document.getElementById("datos").innerHTML = "No has introducido tu nombre y tu password";
+     document.getElementById("datos").innerHTML = "No has introducido tu nombre";
     }
    }
  </script>

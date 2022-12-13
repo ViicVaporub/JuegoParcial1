@@ -26,7 +26,7 @@ function detener(){
 }
 
 function dibujar(ctx){
-     ctx.clearRect(0,0,micanvas.width,micanvas.height);
+     ctx.clearRect(0,0,micanvas.width,400);
      ctx.drawImage(fondo,tiempo,0);
      ctx.drawImage(fondo,tiempo-800,0);
     

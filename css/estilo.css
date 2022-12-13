@@ -1,5 +1,7 @@
 body{
-    background-image: url(/img/fondo.jpg);
+    background-image: url(/img/fondo.jpg );
+    background-size: 1650px 1100px;
+    
   }
 
   .login_btn {
@@ -40,7 +42,7 @@ padding-left: 40px;;
     margin-left: 55rem;
 }
 #lienzo{
-    height: 45vh;
+    height: 4vh;
     width: 65vw;
     margin-left: 24rem;
 }
@@ -59,6 +61,11 @@ padding-left: 40px;;
 .jumbotron h1{
     font-weight: bold;
     -webkit-text-fill-color: aliceblue;
+
+}
+h1{
+    text-align: center;
+    color: darkblue;
 
 }
 
